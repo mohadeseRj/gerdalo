@@ -1,0 +1,60 @@
+---
+description: Gerdalu design system — tokens, theme, colors, typography, components
+alwaysApply: true
+---
+
+# Gerdalu Design System
+
+Canonical tokens live at `gerdalo-frontend/src/styles/design-tokens.css`.
+If that file is missing, ask where it is — never invent substitute colors or fonts.
+
+## Colors
+
+- Never hardcode hex in components. Always use CSS variables (e.g. `var(--yellow-500)`).
+- Page color ratio (both themes): ~70% `--paper-0` / `--paper-100`, ~20% `--ink-900` for text/dark chrome (header/footer), ~10% `--yellow-500` for CTA, active links, badges, emphasis.
+- Yellow must never be a full-page or large-section background.
+- Product/order status colors only:
+  - Draft → `--neutral` on `--neutral-bg`
+  - Pending Review → `--warning` on `--warning-bg`
+  - Approved → `--success` on `--success-bg`
+  - Rejected → `--danger` on `--danger-bg`
+
+## Theme
+
+- Toggle via `data-theme="light"` or `data-theme="dark"` on `<html>`.
+- If unset, follow `prefers-color-scheme`.
+- Persist manual choice in `localStorage` key `theme`.
+- Keep legacy `.dark-theme` class in sync for existing styles.
+
+## Typography & direction
+
+- Font: Vazirmatn only (weights 400/500/600/700/800). Do not add other fonts.
+- Default direction RTL; `lang="fa"` for Persian.
+
+## Breakpoints
+
+Defined only on the MUI theme (`create-app-theme` / `themeWebsiteDashboard`). Use MUI `sx` / `theme.breakpoints`: `xs`, `sm`, `md`, `xmd`, `lg`, `xl`.
+
+| Token | Min width |
+| ----- | --------- |
+| `xs`  | 0px       |
+| `sm`  | 600px     |
+| `md`  | 900px     |
+| `xmd` | 1024px    |
+| `lg`  | 1200px    |
+| `xl`  | 1536px    |
+
+## Radii
+
+Use only `--radius-sm` (10px), `--radius-md` (12px), `--radius-lg` (16px), `--radius-pill` (badges / circular buttons).
+
+## Buttons
+
+- Primary: bg `--yellow-500`, text `--ink-900`, border `--yellow-600`
+- Secondary dark: bg `--ink-900`, text `--paper-0`
+- Outline: border `--ink-900`, no background
+- Ghost: border `--line`, text `--ink-700`
+
+## Cards
+
+Product/content cards: bg `--paper-0`, border `--line`, radius `--radius-lg`, shadow `--shadow-card`.
