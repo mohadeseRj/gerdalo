@@ -28,8 +28,8 @@ If that file is missing, ask where it is — never invent substitute colors or f
 
 ## Typography & direction
 
-- Font: Vazirmatn only (weights 400/500/600/700/800). Do not add other fonts.
-- Default direction RTL; `lang="fa"` for Persian.
+- Fonts: Persian (`lang="fa"`) → Vazirmatn (400/500/600/700/800); English (`lang="en"`) → Quicksand (300–700). Do not add other UI fonts.
+- Default direction RTL; `lang="fa"` for Persian, LTR for English.
 
 ## Breakpoints
 
